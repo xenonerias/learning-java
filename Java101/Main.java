@@ -1,21 +1,19 @@
 package Java101;
 public class Main {
-	public static int countOccurances(int[]arr, int n){
-		int count = 0;
-		for (int i = 0; i < arr.length; i++) {
-		  if (arr[i] == n) {
-			  count++;
-		  }
-  }
-	  return count;
-  }
-  
-	
-		public static void main(String[] args) {
-			int[] arr = {1, 2, 3, 2, 4, 2, 5};
-			int n = 2;
-			
-		
-			System.out.println(countOccurances(arr, n)); 
-		}
+	public static int[] reverseArray(int[] arr) {
+		int n = arr.length;
+		int[] reversed = new int[n];
+	for (int i = 0; i < n; i++) {
+		reversed[i] = arr[n - 1 - i];
 	}
+	return reversed;
+	}
+    public static void main(String[] args) {
+        int[] arr = {6, 2, 7, 9, 10, 11, 14};
+        int[] reversedArr = reverseArray(arr);  
+        
+		for (int i = 0; i < reversedArr.length; i++) {
+            System.out.print(reversedArr[i] + " ");
+        }
+    }
+}
