@@ -1,21 +1,22 @@
 package Java101;
 public class Main {
-	public static double sumGrid(double[][] grid) {
-        double sum = 0.0;
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				sum += grid[i][j];
-	}
-			}
-			return sum;
-		}
-	    public static void main(String[] args) {
-			double[][] grid = {
-				{6.7, 5.2, 3.9},
-				{4.0, 9.5, 6.6},
-				{6.7, 2.8, 2.9}
-			};
 
-			System.out.println(sumGrid(grid));
+	public static int fib(int n) {
+		if (n == 0) return 0;
+		if (n == 1) return 1;
+	
+		int a = 0, b = 1;
+		for (int i = 2; i <= n; i++) {
+		int next = a + b;
+		a = b;
+		b = next;
 	}
+	
+	return b;
+	}
+	
+public static void main(String[] args) {
+	System.out.println(fib(20));
 }
+
+	}
