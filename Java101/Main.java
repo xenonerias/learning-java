@@ -1,19 +1,21 @@
 package Java101;
 public class Main {
-	public static int[] reverseArray(int[] arr) {
-		int n = arr.length;
-		int[] reversed = new int[n];
-	for (int i = 0; i < n; i++) {
-		reversed[i] = arr[n - 1 - i];
+	public static double sumGrid(double[][] grid) {
+        double sum = 0.0;
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				sum += grid[i][j];
 	}
-	return reversed;
+			}
+			return sum;
+		}
+	    public static void main(String[] args) {
+			double[][] grid = {
+				{6.7, 5.2, 3.9},
+				{4.0, 9.5, 6.6},
+				{6.7, 2.8, 2.9}
+			};
+
+			System.out.println(sumGrid(grid));
 	}
-    public static void main(String[] args) {
-        int[] arr = {6, 2, 7, 9, 10, 11, 14};
-        int[] reversedArr = reverseArray(arr);  
-        
-		for (int i = 0; i < reversedArr.length; i++) {
-            System.out.print(reversedArr[i] + " ");
-        }
-    }
 }
