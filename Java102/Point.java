@@ -43,5 +43,8 @@ public static Point centerOfMass(Point[] points) {
     return new Point(sumX / points.length, sumY / points.length);
 }
 
-}
 
+public double angle() {
+    return Math.toDegrees(Math.atan2(y, x));
+}
+}
