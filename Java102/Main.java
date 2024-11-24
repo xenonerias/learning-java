@@ -1,17 +1,11 @@
 package Java102;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        Grid<Integer> grid = new Grid<>(3, 0);
-
-        grid.set(0, 0, 1);
-        grid.set(1, 1, 9);
-        grid.set(2, 2, 4);
-
-        System.out.println("Grid:\n" + grid);
-        ArrayList<Integer> diagonal = grid.diagonal();
-        System.out.println("Diagonal: " + diagonal);
-    }
+        Point p1 = new Point(0, 1);
+        Point p2 = new Point(2, 0);
+        Point p3 = new Point(2, 4);
+        Circle circle = Circle.fromPoints(p1, p2, p3);
+        System.out.println(circle);
+}
 }

@@ -5,9 +5,16 @@ public class Grid<T> {
     private final ArrayList<ArrayList<T>> grid;
     public final int sideLength;
 
+    private static int maxSideLength = 0;
+
     public Grid(int sideLength, T defaultVal) {
         this.sideLength = sideLength;
         this.grid = new ArrayList<>(sideLength);
+        
+        if (sideLength > maxSideLength) {
+            maxSideLength = sideLength;
+        }
+
         for (int i = 0; i < sideLength; i++) {
             grid.add(new ArrayList<>(sideLength));
             for (int j = 0; j < sideLength; j++) {
@@ -26,22 +33,25 @@ public class Grid<T> {
 
     public ArrayList<T> diagonal() {
         ArrayList<T> diagonal = new ArrayList<>();
-        for (int i = 0; i < sideLength;) {
+        for (int i = 0; i < sideLength; i++) {
             diagonal.add(grid.get(i).get(i));
+        }
         return diagonal;
     }
-            return diagonal;
+
+    public static int maxSideLength() {
+        return maxSideLength;
     }
 
     @Override
     public String toString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (ArrayList<T> row : grid) {
             for (T element : row) {
-                str += element + " ";
+                str.append(element).append(" ");
             }
-            str += "\n";
+            str.append("\n");
         }
-        return str;
+        return str.toString();
     }
 }
