@@ -2,10 +2,14 @@ package Java102;
 
 public class Main {
     public static void main(String[] args) {
-        Point p1 = new Point(0, 1);
-        Point p2 = new Point(2, 0);
-        Point p3 = new Point(2, 4);
-        Circle circle = Circle.fromPoints(p1, p2, p3);
-        System.out.println(circle);
+        RightTriangle triangle1 = new RightTriangle(6, 8, "bottom-left");
+        RightTriangle triangle2 = new RightTriangle(6, 8, "top-right");
+
+        System.out.println("Area of triangle1: " + triangle1.area());
+        System.out.println("Perimeter of triangle1: " + triangle1.perimeter());
+        System.out.println("Area of triangle2: " + triangle2.area());
+        System.out.println("Perimeter of triangle2: " + triangle2.perimeter());
+
+        System.out.println("triangle1 and triangle2 are similar: " + RightTriangle.similar(triangle1, triangle2));
 }
 }
